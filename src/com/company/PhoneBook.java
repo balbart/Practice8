@@ -117,6 +117,9 @@ class PhoneBookLoader{
         PhoneBook phoneBook = new PhoneBook();
         breakPoint:
         while (true) {
+            System.out.println("Введите имя или номер контакта");
+            System.out.println("LIST - Вывод книги");
+            System.out.println("EXIT - Выход");
             String something = in.nextLine();
             if(something.matches("[Ll][Ii][Ss][Tt]")){
                 phoneBook.printBook();
@@ -125,6 +128,7 @@ class PhoneBookLoader{
                 break breakPoint;
             }
             else if(PhoneBook.isName(something)){
+                System.out.println("Введите номер");
                 String mayNumber = in.nextLine();
                 if(PhoneBook.isPhoneNumber(mayNumber)){
                     phoneBook.addContact(something, mayNumber);
@@ -134,6 +138,7 @@ class PhoneBookLoader{
                 }
             }
             else if(PhoneBook.isPhoneNumber(something)){
+                System.out.println("Введите имя");
                 String mayName = in.nextLine();
                 if(PhoneBook.isName(mayName)){
                     phoneBook.addContact(mayName, something);
