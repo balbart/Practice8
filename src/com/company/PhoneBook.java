@@ -21,7 +21,7 @@ public class PhoneBook {
             }
         }
         else{
-            System.out.println("Неправильный ввод");;
+            System.out.println("Неправильный ввод");
         }
 
     }
